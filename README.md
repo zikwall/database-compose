@@ -2,7 +2,7 @@
 
 ### Getting started
 
-- `$ sudo mkdir -m 777 ~/shared/data/mysql`
+- `$ sudo mkdir -m 777 -p ~/shared/data/mysql`
 - `$ docker-compose up -d`
 - `$ docker ps -a`
 
@@ -16,3 +16,7 @@ CONTAINER ID   IMAGE                  COMMAND                  CREATED          
 - `$ apt-get install mysql-client` - required, before connect mysql host inside container
 - `$ ./bin/mysql-cli.sh`
 - `$ ./bin/mysql-shell.sh`
+
+#### Troubleshooting
+
+- `$ make permissions` - if bash files give an error, permission is denied
