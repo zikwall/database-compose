@@ -2,7 +2,8 @@ version: '3.3'
 
 services:
   mysql-server:
-    image: mysql:latest
+    # PHP backend is no supported > 5.7 version
+    image: mysql:5.7.32
     hostname: mysql-server
     container_name: mysql-server
     restart: always
