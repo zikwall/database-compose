@@ -1,0 +1,20 @@
+version: '3.3'
+
+services:
+  mysql-server:
+    image: mysql:latest
+    hostname: mysql-server
+    container_name: mysql-server
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: changeme
+      MYSQL_DATABASE: test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: changeme123
+    volumes:
+      - ~/shared/data/mysql:/var/lib/mysql
+      # This will start a new container `mysql-server` where the MySQL instance uses the combined startup settings from
+      # `/etc/mysql/my.cnf` and `./configuration/conf.d/custom.cnf`, with settings from the latter taking precedence.
+      - ./configuration/conf.d:/etc/mysql/conf.d
