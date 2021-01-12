@@ -1,8 +1,9 @@
 #!/bin/bash
 
 USER=$1
-DATABASE=$2
-FILE=$3
+PASSWORD=$2
+DATABASE=$3
+FILE=$4
 
 if [ -z $DATABASE ]; then
   echo "Required argument not specified - database"
@@ -15,4 +16,4 @@ if [ -z $FILE ]; then
 fi
 
 echo "Import .sql dump from $FILE to database ($DATABASE)"
-docker exec -i mysql-server mysql -u$USER -p $DATABASE < $FILE
+docker exec -i mysql-server mysql -u$USER -p$PASSWORD $DATABASE < $FILE
