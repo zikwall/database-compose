@@ -16,6 +16,7 @@ CONTAINER ID   IMAGE                  COMMAND                  CREATED          
 - `$ apt-get install mysql-client` - required, before connect mysql host inside container
 - `$ ./bin/mysql-cli.sh`
 - `$ ./bin/mysql-shell.sh`
+- `$ ./bin/mysql-import.sh <user> <database> <file.sql>`
 
 #### Troubleshooting
 
